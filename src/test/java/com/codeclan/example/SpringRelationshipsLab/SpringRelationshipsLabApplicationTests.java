@@ -4,7 +4,7 @@ import com.codeclan.example.SpringRelationshipsLab.models.Department;
 import com.codeclan.example.SpringRelationshipsLab.models.Employee;
 import com.codeclan.example.SpringRelationshipsLab.repositories.DepartmentRepository;
 import com.codeclan.example.SpringRelationshipsLab.repositories.EmployeeRepository;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,7 +24,7 @@ public class SpringRelationshipsLabApplicationTests {
 
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
 
 	@Test
