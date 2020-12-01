@@ -2,8 +2,10 @@ package com.codeclan.example.SpringRelationshipsLab;
 
 import com.codeclan.example.SpringRelationshipsLab.models.Department;
 import com.codeclan.example.SpringRelationshipsLab.models.Employee;
+import com.codeclan.example.SpringRelationshipsLab.models.Project;
 import com.codeclan.example.SpringRelationshipsLab.repositories.DepartmentRepository;
 import com.codeclan.example.SpringRelationshipsLab.repositories.EmployeeRepository;
+import com.codeclan.example.SpringRelationshipsLab.repositories.ProjectRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class SpringRelationshipsLabApplicationTests {
 	@Autowired
 	DepartmentRepository departmentRepository;
 
+	@Autowired
+	ProjectRepository projectRepository;
 
 
 	@Test
@@ -29,12 +33,15 @@ public class SpringRelationshipsLabApplicationTests {
 
 	@Test
 	public void createEmployeeAndDepartment(){
-		Department department = new Department("RnD");
-		departmentRepository.save(department);
-		Employee employee = new Employee("Json", "Jsonson","125421", department);
-		Employee employee1 = new Employee("Graham", "Grahamson","123456", department);
+		Department dept1 = new Department("RnD");
+		departmentRepository.save(dept1);
+		Employee employee = new Employee("Json", "Jsonson","125421", dept1);
+		Employee employee1 = new Employee("Graham", "Grahamson","123456", dept1);
 		employeeRepository.save(employee);
 		employeeRepository.save(employee1);
+		Project project = new Project("The Craig David", 7);
+		projectRepository.save(project);
+
 	}
 
 }
